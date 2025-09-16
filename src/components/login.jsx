@@ -19,7 +19,7 @@ const Login = () => {
   const handleLogin = async () => {
     
     try {
-      const res = await axios.post("http://localhost:7777/login", {
+      const res = await axios.post("https://devtinder-7-63h9.onrender.com/login", {
         email,
         Password
       }, {
