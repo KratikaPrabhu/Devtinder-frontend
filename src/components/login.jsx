@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-import { useNavigate } from 'react-router';
+import {useNavigate } from "react-router-dom"
 import { BASE_URL } from '../utils/constants';
 
 const Login = () => {
@@ -11,7 +11,7 @@ const Login = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [isLoginForm, setisLoginform] = useState(true);
-  const [error,setError] = useState(true);
+  const [error,setError] = useState("");
   
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Login = () => {
       dispatch(addUser(res.data));
       navigate("/")
     } catch (err) {
-     setError(err.response.data)
+     setError(err?.response?.data || "Login failed")
       
     }
   }
@@ -47,7 +47,7 @@ const Login = () => {
       dispatch(addUser(res.data));
       navigate("/profile")
     }catch(err){
-      setError(err.response.data)
+      setError(err?.response?.data || "Signup failed")
     }
   }
 

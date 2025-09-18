@@ -34,7 +34,7 @@ console.log(err);
         <p>Welcome!!  {user.firstName}</p>
         <div className="relative group">
           <img src={user.photoUrl}
-            alt="uset photo"
+            alt="user photo"
             className="w-12 h-12 rounded-full"
           />
           <div className="absolute right-0 mt-2 w-40 bg-white border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">

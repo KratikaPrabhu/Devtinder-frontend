@@ -10,4 +10,17 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  server: {
+  port: 5174,
+  strictPort: false,
+  host: true,
+  cors: true,
+  proxy: {
+    '/api': {
+      target: 'https://devtinder-7-63h9.onrender.com',
+      changeOrigin: true,
+      secure: true
+    }
+  }
+}
 })

@@ -17,9 +17,10 @@ const navigate = useNavigate();
    })
    dispatch(addUser(res.data))
   }catch(err){
-    if(err.status==400){
-      navigate("/login")    
-  }
+    const status = err?.response?.status;
+    if(status === 400 ){
+      navigate("/login");
+    }
   }  
 };
 useEffect(()=>{

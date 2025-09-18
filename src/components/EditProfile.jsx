@@ -14,7 +14,7 @@ const EditProfile = ({user}) =>{
    const [gender,setGender] = useState(user.gender);
    const [about,setAbout] = useState(user.about);
    const [toast,setToast]= useState(false);
-   const [error,setError] = useState(true);
+   const [error,setError] = useState("");
   const dispatch = useDispatch();
 
    const SaveProfile = async()=>{
